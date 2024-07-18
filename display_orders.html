@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pedidos</h1>
+        
+        <div class="table-container">
+            <h2 class="table-title">Resumen de Pedidos</h2>
+            <div class="table-responsive">
+                <table id="summaryTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Oreo</th>
+                            <th>Chocolate</th>
+                            <th>Cheesecake</th>
+                            <th>Azúcar Canela</th>
+                            <th>Café Cold Brew</th>
+                            <th>Zanahoria</th>
+                            <th>Chai & Biscoff</th>
+                            <th>Total Donas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="todayRow">
+                            <td id="todayHeader">Hoy</td>
+                            <!-- Today's summary data will be inserted here -->
+                        </tr>
+                        <tr id="tomorrowRow">
+                            <td id="tomorrowHeader">Mañana</td>
+                            <!-- Tomorrow's summary data will be inserted here -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h2 class="table-title">Detalles de Pedidos</h2>
+            <div class="table-responsive">
+                <table id="orderTable">
+                    <thead>
+                        <tr>
+                            <th>Fecha de Entrega</th>
+                            <th>Tipo de Pedido</th>
+                            <th>Nombre Completo</th>
+                            <th>Correo Electrónico</th>
+                            <th>Teléfono</th>
+                            <th>Punto de Venta</th>
+                            <th>Oreo</th>
+                            <th>Chocolate</th>
+                            <th>Cheesecake</th>
+                            <th>Azúcar Canela</th>
+                            <th>Café Cold Brew</th>
+                            <th>Zanahoria</th>
+                            <th>Chai & Biscoff</th>
+                            <th>Total Donas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Order data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="display_orders.js"></script>
+</body>
+</html>
