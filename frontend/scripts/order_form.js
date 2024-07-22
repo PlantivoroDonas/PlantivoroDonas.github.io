@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pointOfSale.innerHTML = `
                 <option value="Tipi'Oka Lomas">Tipi'Oka Lomas</option>
                 <option value="Vegandra">Vegandra</option>`;
+            pointOfSale.previousElementSibling.textContent = "Punto de Recolección";
             paymentInfoTitle.style.display = 'block';
             paymentInfo.style.display = 'block';
         } else if (this.value === 'point_of_sale') {
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <option value="UVM">UVM</option>
                 <option value="Vegandra">Vegandra</option>
                 <option value="Wholejuice">Wholejuice</option>`;
+            pointOfSale.previousElementSibling.textContent = "Punto de Venta";
             paymentInfoTitle.style.display = 'none';
             paymentInfo.style.display = 'none';
         }
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.forEach((value, key) => {
             order[key] = value;
         });
-        fetch('https://script.google.com/macros/s/AKfycbyilAVNewaJDlwbLoVd49dZnq_qKCr8gqFvf39CLjT6ewjDuxleRQpW_8Q0eTOCy_4h/exec', {
+        fetch('YOUR_SCRIPT_URL', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
