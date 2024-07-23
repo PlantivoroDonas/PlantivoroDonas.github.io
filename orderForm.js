@@ -69,13 +69,19 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(order),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             alert('Order submitted successfully');
             window.location.href = 'confirmation.html';
         })
         .catch((error) => {
             console.error('Error:', error);
+            alert('There was a problem with your order submission.');
         });
     });
 });
