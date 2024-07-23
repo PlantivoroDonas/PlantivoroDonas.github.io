@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.forEach((value, key) => {
             order[key] = value;
         });
-        fetch('YOUR_SCRIPT_URL', {
+        fetch('https://script.google.com/macros/s/AKfycbyilAVNewaJDlwbLoVd49dZnq_qKCr8gqFvf39CLjT6ewjDuxleRQpW_8Q0eTOCy_4h/exec', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
