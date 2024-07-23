@@ -6,6 +6,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const pointOfSale = document.getElementById('point_of_sale');
     const paymentInfoTitle = document.getElementById('payment_info_title');
     const paymentInfo = document.getElementById('payment_info');
+    const deliveryDate = document.getElementById('delivery_date');
+
+    // Disable Sundays
+    deliveryDate.addEventListener('input', function() {
+        const selectedDate = new Date(this.value);
+        if (selectedDate.getDay() === 0) {
+            alert('No se realizan entregas los domingos. Por favor, elija otro día.');
+            this.value = '';
+        }
+    });
+
+    // Ensure date is greater than today
+    const today = new Date().toISOString().split('T')[0];
+    deliveryDate.setAttribute('min', today);
 
     orderType.addEventListener('change', function() {
         if (this.value === 'personal') {
@@ -48,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.forEach((value, key) => {
             order[key] = value;
         });
-        fetch('https://script.google.com/macros/s/AKfycbyilAVNewaJDlwbLoVd49dZnq_qKCr8gqFvf39CLjT6ewjDuxleRQpW_8Q0eTOCy_4h/exec', {
+        fetch('YOUR_SCRIPT_URL', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
